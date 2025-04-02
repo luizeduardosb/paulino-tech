@@ -10,7 +10,7 @@ package com.paulino.backend.service;
  import com.paulino.backend.repository.CidadeRepository;
  
  @Service
- public class CategoriaService {
+ public class CidadeService {
  
      @Autowired
      private CidadeRepository cidadeRepository;
