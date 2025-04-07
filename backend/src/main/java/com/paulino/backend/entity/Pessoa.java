@@ -39,4 +39,6 @@ public class Pessoa {
       private Date dataCriacao;
       @Temporal(TemporalType.TIMESTAMP)
       private Date dataAtualizacao;
+
+      // att
 }
