@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.paulino.backend.entity.Estado;
 import com.paulino.backend.repository.EstadoRepository;
-
 @Service
 public class EstadoService {
     

@@ -8,7 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -19,7 +18,6 @@ import lombok.Data;
 @Data
 public class Produto {
     
-         
       @Id
       @GeneratedValue(strategy = GenerationType.AUTO)
       private Long id;
@@ -29,7 +27,6 @@ public class Produto {
       private Double valorCusto;
       private Double valorVenda;
 
- 
       @ManyToOne
       @JoinColumn(name="idMarca")
       private Marca marca;

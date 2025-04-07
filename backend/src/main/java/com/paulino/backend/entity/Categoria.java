@@ -10,7 +10,6 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.Data;
-
 @Entity
 @Table(name = "categoria")
 @Data

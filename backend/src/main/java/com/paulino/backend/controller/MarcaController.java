@@ -17,9 +17,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
-
-
-
 @RestController
 @RequestMapping("/api/marca")
 public class MarcaController {

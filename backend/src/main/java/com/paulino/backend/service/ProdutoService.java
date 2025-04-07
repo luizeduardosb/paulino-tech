@@ -10,28 +10,28 @@ import com.paulino.backend.entity.Produto;
 import com.paulino.backend.repository.ProdutoRepository;
 
 @Service
-  public class ProdutoService {
-  
-      @Autowired
-      private ProdutoRepository produtoRepository;
+public class ProdutoService {
 
-      public List<Produto> buscarTodos() {
-        return produtoRepository.findAll(); 
-      }
-  
-      public Produto salvar(Produto produto) {
-          produto.setDataCriacao(new Date());
-          Produto produtoNovo = produtoRepository.saveAndFlush(produto)
-          return produtoNovo;
-      }
-  
-      public Produto editar(Produto produto) {
-          produto.setDataAtualizacao(new Date());
-          return produtoRepository.saveAndFlush(produto);
-      }
-  
-      public void excluir(Long id) {
-          Produto produto = produtoRepository.findById(id).get();
-          produtoRepository.delete(produto);
-      }
-  }
+    @Autowired
+    private ProdutoRepository produtoRepository;
+
+    public List<Produto> buscarTodos() {
+        return produtoRepository.findAll();
+    }
+
+    public Produto salvar(Produto produto) {
+        produto.setDataCriacao(new Date());
+        Produto produtoNovo = produtoRepository.saveAndFlush(produto);
+        return produtoNovo;
+    }
+
+    public Produto editar(Produto produto) {
+        produto.setDataAtualizacao(new Date());
+        return produtoRepository.saveAndFlush(produto);
+    }
+
+    public void excluir(Long id) {
+        Produto produto = produtoRepository.findById(id).get();
+        produtoRepository.delete(produto);
+    }
+}
