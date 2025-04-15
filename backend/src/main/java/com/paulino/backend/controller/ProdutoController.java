@@ -17,7 +17,7 @@ import com.paulino.backend.entity.Produto;
 import com.paulino.backend.service.ProdutoService;
 
 @RestController
-@RequestMapping("/api/Produto")
+@RequestMapping("/api/produto")
 public class ProdutoController {
 
     @Autowired

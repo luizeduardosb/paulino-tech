@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.paulino.backend.entity.Produto;
 import com.paulino.backend.entity.ProdutoImagem;
 import com.paulino.backend.repository.ProdutoImagemRepository;
+import com.paulino.backend.repository.ProdutoRepository;
 
 @Service
 public class ProdutoImagemService {
@@ -34,7 +36,7 @@ public class ProdutoImagemService {
                 byte[] bytes = file.getBytes();
                 String nomeImagem = String.valueOf(produto.getId()) + file.getOriginalFilename();
 
-                Path caminho = Paths.get("C:/Users/dudu0/Documents/Loja Virtual/paulino-tech/produtoImagens" + nomeImagem);               
+                Path caminho = Paths.get("C:/Users/dudu0/Documents/Loja Virtual/paulino-tech/produtoImagens/" + nomeImagem);               
                 Files.write(caminho, bytes);
                 produtoImagemNovo.setNome(nomeImagem);
             }
