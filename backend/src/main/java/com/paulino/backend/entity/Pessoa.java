@@ -47,7 +47,6 @@ public class Pessoa {
       @Temporal(TemporalType.TIMESTAMP)
       private Date dataAtualizacao;
 
-
       public void setPermissaoPessoas(List<PermissaoPessoa> pp) {
             for(PermissaoPessoa p:pp) {
                   p.setPessoa(this);
