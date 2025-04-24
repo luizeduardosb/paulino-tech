@@ -18,11 +18,17 @@ public class PessoaClienteService {
     @Autowired
     private PermissaoPessoaService permissaoPessoaService;
 
+    @Autowired
+    private EmailService emailService;
+
     public Pessoa salvar(PessoaClienteRequestDTO pessoaClienteRequestDTO) {
         Pessoa pessoa = new PessoaClienteRequestDTO().converter(pessoaClienteRequestDTO);
         pessoa.setDataCriacao(new Date());
         Pessoa pessoaNova = pessoaClienteRepository.saveAndFlush(pessoa);
         permissaoPessoaService.vincularPessoaPermissaoCliente(pessoaNova);
+        emailService.enviarEmailTexto(pessoaNova.getEmail(), "Novo cadastro em PaulinoTech",
+                "O registro na loja foi realizado com sucesso. Em breve você receberá sua senha por email.");
+
         return pessoaNova;
     }
 }
