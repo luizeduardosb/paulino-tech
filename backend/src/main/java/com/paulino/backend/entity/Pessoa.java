@@ -31,9 +31,11 @@ public class Pessoa {
       private String cpf;
       private String email;
       private String senha;
+      private String codigoRecuperacaoSenha;
+      @Temporal(TemporalType.TIMESTAMP)
+      private Date dataEnvioCodigo;
       private String endereco;
       private String cep;
- 
       @ManyToOne
       @JoinColumn(name="idCidade")
       private Cidade cidade;
