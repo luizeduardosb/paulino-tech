@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { AppMenuItem } from '@/types';
 
 import Estado from '@/app/(main)/cadastros/estados/page';
+import Categoria from '@/app/(main)/cadastros/categorias/page';
 
 const AppMenu = () => {
     const { layoutConfig } = useContext(LayoutContext);
@@ -19,9 +20,10 @@ const AppMenu = () => {
         },
         {
             label: 'Cadastros',
-            items: [{
-                label: 'Estados', icon: 'pi pi-fw pi-home', to: '/cadastros/estados'
-            }]
+            items: [
+                {label: 'Estados', icon: 'pi pi-fw pi-home', to: '/cadastros/estados'},
+                {label: 'Categorias', icon: 'pi pi-fw pi-home', to: 'cadastros/categorias'}
+            ]
         },
         {
             label: 'UI Components',
