@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.paulino.backend.entity.Estado;
 import com.paulino.backend.service.EstadoService;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,21 +26,25 @@ public class EstadoController {
     private EstadoService estadoService;
 
     @GetMapping("/")
+    @CrossOrigin("http://localhost:3000")
     public List<Estado> buscarTodos(){
         return estadoService.buscarTodos();
     }
 
     @PostMapping("/")
+    @CrossOrigin("http://localhost:3000")
     public Estado salvar(@RequestBody Estado estado) {
         return estadoService.salvar(estado);
     }
 
-    @PutMapping("/")
+    @PutMapping("/{id}")
+    @CrossOrigin("http://localhost:3000")
     public Estado editar(@RequestBody Estado estado) {
         return estadoService.editar(estado);
     }
 
     @DeleteMapping("/{id}")
+    @CrossOrigin("http://localhost:3000")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id) {
         estadoService.excluir(id);
         return ResponseEntity.ok().build();
